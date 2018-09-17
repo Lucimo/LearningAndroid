@@ -1,1 +1,1 @@
-include ':Prueba', ':app', ':base', ':instantapp', ':mylibrary'
+include ':AndroidTutorial', ':app', ':base', ':instantapp', ':mylibrary'

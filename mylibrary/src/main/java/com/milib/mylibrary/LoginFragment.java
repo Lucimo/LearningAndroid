@@ -19,6 +19,7 @@ public EditText etpass;
 public Button btnLogin;
 public Button btnRegister;
 public LoginFragmentEvents events;
+    public LoginFragmentListener listener;
 
     public LoginFragment() {
         // Required empty public constructor
@@ -39,6 +40,7 @@ public LoginFragmentEvents events;
         events = new LoginFragmentEvents(this);
         btnLogin.setOnClickListener(events);
         btnRegister.setOnClickListener(events);
+
         return v;
     }
 
@@ -49,7 +51,7 @@ public LoginFragmentEvents(LoginFragment fragment){
 this.loginFragment = fragment;
 }
     @Override
-    public void onClick(View view) {
+    public void onClick(View v) {
 
     }
 }
