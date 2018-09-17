@@ -19,7 +19,7 @@ public EditText etpass;
 public Button btnLogin;
 public Button btnRegister;
 public LoginFragmentEvents events;
-    public LoginFragmentListener listener;
+public LoginFragmentListener listener;
 
     public LoginFragment() {
         // Required empty public constructor
@@ -44,6 +44,9 @@ public LoginFragmentEvents events;
         return v;
     }
 
+    public void setListener(LoginFragmentListener listener) {
+        this.listener = listener;
+    }
 }
 class LoginFragmentEvents implements View.OnClickListener{
     private LoginFragment loginFragment;
@@ -52,6 +55,12 @@ this.loginFragment = fragment;
 }
     @Override
     public void onClick(View v) {
-
+if(v.getId()==this.loginFragment.btnLogin.getId()){
+    this.loginFragment.listener.loginFragmentLoginButtonClick(this.loginFragment.etemail.getText().toString(),
+    this.loginFragment.etpass.getText().toString());
+}
+else if (v.getId()==this.loginFragment.btnRegister.getId()){
+    this.loginFragment.listener.loginFragmentRegisterButtonClick();
+}
     }
 }

@@ -16,17 +16,21 @@ public class MainActivity extends AppCompatActivity {
 
    loginFragment = (LoginFragment)getSupportFragmentManager().findFragmentById(R.id.fragmentLogin);
    MainActivityEvents mainActivityEvents= new MainActivityEvents(this);
+
+
    loginFragment.setListener(mainActivityEvents);
+
     }
 }
 class MainActivityEvents implements LoginFragmentListener{
     MainActivity mainActivity;
     public MainActivityEvents(MainActivity mainActivity){
+        this.mainActivity=mainActivity;
 
     }
 
     @Override
-    public void loginFragmentLoginButtonClick() {
+    public void loginFragmentLoginButtonClick(String sUser, String sPass) {
 
     }
 
